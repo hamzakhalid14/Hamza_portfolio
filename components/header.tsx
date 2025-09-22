@@ -27,54 +27,94 @@ const Header = () => {
   }
 
   const downloadCV = () => {
-    // Create a downloadable CV content
+    // Generate CV content dynamically
     const cvContent = `
 HAMZA KHALID - Développeur FullStack
 Email: hamzakhalidovic@gmail.com
 Téléphone: 0689941513
 LinkedIn: hamzakhalid14
-Portfolio: https://troopl.com/hamzakhalid
+Portfolio: https://hamzakhalid14.github.io/Hamza_portfolio
 Localisation: Casablanca, Maroc
+
+═══════════════════════════════════════════════════════════════
 
 FORMATION
 • 12/2023 – 02/2024: Formation Développement Web Full-Stack - Lewagon
-• 2019 – 2023: Licence en Génie informatique - FST SETTAT
+• 2019 – 2023: Licence en Génie informatique - FST SETTAT  
 • 2019: Baccalauréat sciences expérimentales - LYCÉE OMAR EL KHAYAM
 
+═══════════════════════════════════════════════════════════════
+
 EXPÉRIENCE PROFESSIONNELLE
+
 • 05/2025 – 09/2025: Peaqock - Stage
-  Mission: Conception et Développement back-end du module CRM et réalisation du front-end du module SRM (Orders) d'un ERP
+  Mission: Conception et Développement back-end du module CRM et 
+  réalisation du front-end du module SRM (Orders) d'un ERP
   Outils: React, Spring Boot, REST API, Git, Agile
 
-• 06/2024 – 09/2024: Care&Grow Consulting – Freelance
-  Mission: Développement d'une application web avec Odoo en ligne pour la gestion des ventes et des commandes
+• 06/2024 – 09/2024: Care&Grow Consulting – Freelance  
+  Mission: Développement d'une application web avec Odoo en ligne 
+  pour la gestion des ventes et des commandes
   Outils: Odoo Online, XML, Python, PostgreSQL
 
 • 02/2024 – 05/2024: Simon Express – Stage
-  Mission: Développement d'un site e-commerce (gestion produits, utilisateurs, commandes, livraison)
+  Mission: Développement d'un site e-commerce (gestion produits, 
+  utilisateurs, commandes, livraison)
   Outils: Laravel, React.js, HTML, CSS, Bootstrap
 
-COMPÉTENCES
-• Back-End: Java, Spring Boot, PHP, Laravel, Node.js, Express.js, RubyOnRails
-• Base de données: MySQL, PostgreSQL, Oracle, MongoDb
-• Front-End: React, HTML, CSS, JavaScript, Bootstrap, Vanilla Js
-• Méthodologies: Agile (SCRUM), Git, Docker
-• Modélisation: UML, MERISE
+═══════════════════════════════════════════════════════════════
+
+COMPÉTENCES TECHNIQUES
+
+Back-End:
+• Java, Spring Boot, PHP, Laravel, Node.js, Express.js, Ruby on Rails
+
+Base de données:
+• MySQL, PostgreSQL, Oracle, MongoDB
+
+Front-End: 
+• React, Angular, HTML, CSS, JavaScript, Bootstrap, Vanilla JS
+
+Outils & Méthodologies:
+• Git, Docker, Agile (SCRUM), UML, MERISE
+
+═══════════════════════════════════════════════════════════════
 
 PROJETS PERSONNELS
-• Application Web de e-commerce (Angular & Spring Boot)
-• Application de chat en temps réel avec authentification (Ruby on Rails, Stimulus.js, Bootstrap)
 
-CERTIFICATS
+• Application Web de e-commerce (Angular & Spring Boot)
+• Application de chat en temps réel avec authentification 
+  (Ruby on Rails, Stimulus.js, Bootstrap)
+• Portfolio personnel (Next.js, React, Tailwind CSS)
+
+═══════════════════════════════════════════════════════════════
+
+CERTIFICATS & FORMATIONS
+
 • Certification Professionnelle Oracle: Développeur Java SE 17 (en cours)
 • Développement Web Full Stack: Ruby on Rails & JavaScript – Le Wagon
+• Spécialisation en architectures microservices et API RESTful
+
+═══════════════════════════════════════════════════════════════
+
+LANGUES
+• Français: Courant
+• Arabe: Natif  
+• Anglais: Intermédiaire
+
+CENTRES D'INTÉRÊT
+• Veille technologique et nouvelles technologies
+• Participation à des hackathons et projets open source
+• Football et sports d'équipe
     `
 
-    const blob = new Blob([cvContent], { type: "text/plain" })
+    // Create and download the CV file
+    const blob = new Blob([cvContent], { type: "text/plain;charset=utf-8" })
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
     a.href = url
     a.download = "Hamza_KHALID_CV.txt"
+    a.style.display = "none"
     document.body.appendChild(a)
     a.click()
     document.body.removeChild(a)

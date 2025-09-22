@@ -99,10 +99,6 @@ const About = () => {
             </div>
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
-                <div className="w-4 h-4 bg-primary rounded-full"></div>
-                <span className="text-lg">3+ années d'expérience</span>
-              </div>
-              <div className="flex items-center space-x-4">
                 <div className="w-4 h-4 bg-accent rounded-full"></div>
                 <span className="text-lg">10+ projets réalisés</span>
               </div>
